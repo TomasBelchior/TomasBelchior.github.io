@@ -1,0 +1,67 @@
+:root {
+    --light-green: #CFF5E7;
+    --green: #A0E4CB;
+    --blue: #59C1BD;
+    --dark-blue: #0D4C92;
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+
+body {
+    background-color: rgb(5, 5, 5);
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    overflow: hidden;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: clamp(2em, 2vw, 4em);
+    font-weight: 400;
+    padding: 0px;
+    text-align: center;
+    place-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 55vh 5vh auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+#title { grid-area: 1 / 1 / 2 / 4; }
+#box1 { grid-area: 2 / 1 / 3 / 2; }
+#box2 { grid-area: 2 / 2 / 3 / 3; }
+#box3 { grid-area: 2 / 3 / 3 / 4; }    
+
+.gradient-boxes {
+    height: 150px;
+    width: 150px;
+    background-color: rgb(20, 20, 20);
+    border: solid;
+    border-radius: 20px;
+    padding: 0.5em;
+    font-size: 17px;
+}
+
+.magic {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--light-green),
+        var(--green),
+        var(--blue),
+        var(--dark-blue),
+        var(--light-green)
+    );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
